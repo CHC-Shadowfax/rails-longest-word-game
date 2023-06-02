@@ -1,0 +1,16 @@
+<h1>New Game</h1>
+
+
+<%= @letters %>
+<form action="score" method="post" data-turbo="false">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div class="form-group">
+    <label for="longestWord">What is the longest word you can find?</label>
+    <input type="text" class="form-control" id="longestWord" placeholder="Type a word" name="longestWord">
+    <input id="letters" name="letters" type="hidden" value="<% @letters %>" />
+
+  </div>
+    <button type="submit" class="btn btn-primary">Play</button>
+</form>
+
+<%# Falta la logica de guardar las letras %>
